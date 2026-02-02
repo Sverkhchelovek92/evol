@@ -4,6 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EVOL Music Player</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>EVOL</h1>
+      <div class="track-info" id="trackInfo">No tracks selected</div>
+
+      <div class="progress-container" id="progressContainer">
+        <div class="progress" id="progress"></div>
+      </div>
+
+      <div class="time">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+
+      <div class="controls">
+        <label class="file-label" for="fileInput">Select track</label>
+        <input type="file" id="fileInput" accept="audio/*" />
+
+        <button id="playBtn" disabled>Play</button>
+        <button id="pauseBtn" disabled style="display: none">Pause</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
