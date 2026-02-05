@@ -47,3 +47,21 @@ function formatTime(seconds) {
   const sec = Math.floor(seconds % 60)
   return `${min}:${sec.toString().padStart(2, '0')}`
 }
+
+// Play and Pause btns
+
+playBtn.addEventListener('click', () => {
+  audio.play().catch((err) => {
+    console.error('Playback error:', err)
+  })
+
+  playBtn.style.display = 'none'
+  pauseBtn.style.display = 'inline-block'
+})
+
+pauseBtn.addEventListener('click', () => {
+  audio.pause()
+
+  pauseBtn.style.display = 'none'
+  playBtn.style.display = 'inline-block'
+})
