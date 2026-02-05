@@ -65,3 +65,15 @@ pauseBtn.addEventListener('click', () => {
   pauseBtn.style.display = 'none'
   playBtn.style.display = 'inline-block'
 })
+
+audio.addEventListener('pause', () => {
+  pauseBtn.style.display = 'none'
+  playBtn.style.display = 'inline-block'
+})
+
+audio.addEventListener('ended', () => {
+  pauseBtn.style.display = 'none'
+  playBtn.style.display = 'inline-block'
+  progress.style.width = '0%'
+  currentTimeEl.textContent = '0:00'
+})
