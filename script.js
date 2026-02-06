@@ -52,6 +52,17 @@ function formatTime(seconds) {
   return `${min}:${sec.toString().padStart(2, '0')}`
 }
 
+// Progress bar
+
+function updateProgress() {
+  if (!audio.duration || isNaN(audio.duration)) return
+
+  const progressPercent = (audio.currentTime / audio.duration) * 100
+  progress.style.width = `${progressPercent}%`
+
+  currentTimeEl.textContent = formatTime(audio.currentTime)
+}
+
 // Play and Pause btns
 
 playBtn.addEventListener('click', () => {
@@ -88,6 +99,16 @@ audio.addEventListener('ended', () => {
   currentTimeEl.textContent = '0:00'
 })
 
+// Volume slider
+
 volumeSlider.addEventListener('input', () => {
   audio.volume = parseFloat(volumeSlider.value)
+})
+
+// Progress slider
+
+audio.addEventListener('timeupdate', updateProgress)
+
+audio.addEventListener('play', () => {
+  updateProgress() // сразу обновить
 })

@@ -123,4 +123,5 @@ input[type='file'] {
 #volume {
   width: 140px;
   accent-color: #4fc3f7;
+  cursor: pointer;
 }
