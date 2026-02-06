@@ -10,6 +10,9 @@ const progressContainer = document.querySelector('.progress-container')
 const currentTimeEl = document.getElementById('currentTime')
 const durationEl = document.getElementById('duration')
 
+const volumeSlider = document.getElementById('volume')
+audio.volume = 1
+
 // Audio element
 
 const audio = new Audio()
@@ -82,4 +85,8 @@ audio.addEventListener('ended', () => {
   playBtn.style.display = 'inline-block'
   progress.style.width = '0%'
   currentTimeEl.textContent = '0:00'
+})
+
+volumeSlider.addEventListener('input', () => {
+  audio.volume = parseFloat(volumeSlider.value)
 })
