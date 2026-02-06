@@ -11,12 +11,13 @@ const currentTimeEl = document.getElementById('currentTime')
 const durationEl = document.getElementById('duration')
 
 const volumeSlider = document.getElementById('volume')
-audio.volume = 1
 
 // Audio element
 
 const audio = new Audio()
 audio.preload = 'metadata'
+
+audio.volume = 1
 
 fileInput.addEventListener('change', (e) => {
   const file = e.target.files[0]
