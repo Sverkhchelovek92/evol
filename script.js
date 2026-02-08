@@ -112,3 +112,25 @@ audio.addEventListener('timeupdate', updateProgress)
 audio.addEventListener('play', () => {
   updateProgress() // сразу обновить
 })
+
+// Progress click
+
+progressContainer.addEventListener('click', (e) => {
+  if (!audio.duration || isNaN(audio.duration) || audio.duration <= 0) {
+    return
+  }
+
+  const rect = progressContainer.getBoundingClientRect()
+  if (rect.width <= 0) return
+
+  const clickX = e.clientX - rect.left
+  let percent = clickX / rect.width
+
+  percent = Math.max(0, Math.min(1, percent))
+
+  const newTime = percent * audio.duration
+
+  audio.currentTime = newTime
+
+  updateProgress()
+})
