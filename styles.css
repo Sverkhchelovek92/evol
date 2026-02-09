@@ -31,8 +31,6 @@ body {
     #151726 51%,
     #10121c 100%
   );
-  /* border-bottom: 1px solid #dfdfdf;
-  border-top: 1px solid #ffffff33; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,9 +41,6 @@ body {
   font-weight: bold;
   color: #dfdfdf;
   text-shadow: 1px 1px 0 #ffffff80;
-  /* box-shadow:
-    inset 1px 1px 0 #ffffff80,
-    inset -1px -1px 0 #00000040; */
 }
 
 .title-text {
@@ -65,9 +60,6 @@ body {
   padding: 0;
   margin: 0;
   background: #10121c;
-  /* border: 1px outset #dfdfdf;
-  border-top-color: #ffffff;
-  border-left-color: #ffffff; */
   font:
     bold 12px/12px Arial,
     sans-serif;
